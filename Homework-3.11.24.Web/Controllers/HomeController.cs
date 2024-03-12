@@ -11,7 +11,6 @@ namespace Homework_3._11._24.Web.Controllers
 {
     public class HomeController : Controller
     {
-
         private readonly IWebHostEnvironment _webHostEnvironment;
 
         public HomeController(IWebHostEnvironment webHostEnvironment)
@@ -63,15 +62,6 @@ namespace Homework_3._11._24.Web.Controllers
             });
         }
     }
-
-
-
-
-
-
-
-
-
 }
 
 
