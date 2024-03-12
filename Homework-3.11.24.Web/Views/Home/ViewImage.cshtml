@@ -1,0 +1,29 @@
+﻿@model ImageViewModel
+
+<div class="row">
+    @if (Model.PasswordPreviouslyEntered != true)
+    {
+        <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+            <h3 class="alert-danger">@Model.Message</h3>
+            <h4>Please enter the password for this image:</h4>
+            <form method="post" action="/home/ViewImage?id=@Model.Image.Id">
+                <input type="hidden" name="id" value="@Model.Image.Id" />
+                <input type="text" class="form-control" placeholder="Password" name="enteredPassword" />
+                <br />
+                <button class="btn btn-primary w-100">Submit</button>
+                <input name="password" type="hidden" value="@Model.Image.Password" />
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <img src="/uploads/@Model.Image.FileName" style="width: 800px;" />
+                <br />
+                <h3>Views: @Model.Image.Views</h3>
+            </div>
+        </div>
+    }
+</div>
+
